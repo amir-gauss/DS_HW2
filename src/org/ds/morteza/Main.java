@@ -6,10 +6,10 @@ public class Main {
     public static void main(String... args) {
         ArrayBlockingQueue<Integer> queue = new ArrayBlockingQueue<>(10);
 
-        Producer producer1 = new Producer(queue);
+        Producer p = new Producer(queue);
         Consumer consumer = new Consumer(queue);
 
-        Thread t1 = new Thread(producer1);
+        Thread t1 = new Thread(p);
         Thread t2 = new Thread(consumer);
 
         t1.start();
